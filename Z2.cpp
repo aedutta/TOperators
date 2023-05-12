@@ -27,6 +27,14 @@ Z2::Z2(const int8_t a, const int8_t b, const int8_t c)
     val[2] = c;
 }
 
+// Z2 Z2::mod4() const {
+//    if (val[2] >= 2) {
+//        return Z2(0,0,0);
+//    }
+//    int8_t a_mod4 = val[0] % 4;
+//    int8_t b_mod4 = val[1] - 4*floor((val[1]*SQRT2)/4);
+//   return Z2(a_mod4, b_mod4, 0);
+// }
 
 
 /**
