@@ -14,6 +14,10 @@ public:
     Z2& operator-=(Z2&); //handles -=
     Z2 operator-(); //handles negation
     Z2 operator-(Z2&); //handles subtraction
+    static bool isZeroMod2Sqrt2(const Z2& z);
+    static bool isZeroMod4(const Z2& z);
+    static bool isZeroMod8(const Z2& z);
+    static bool isZeroMod4Sqrt2(const Z2& z);
     bool operator<(const int8_t&);
     bool operator<(const Z2&) const;
     bool operator>(const int8_t&);
