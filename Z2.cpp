@@ -28,19 +28,43 @@ Z2::Z2(const int8_t a, const int8_t b, const int8_t c)
 }
 
 bool Z2::isZeroMod2Sqrt2(const Z2& z) {
-    return (z.val[0] % 2 == 0) && (z.val[1] % 4 == 0);
+    if (z.val[3] == 0) {
+        return (z.val[0] % 2 == 0) && (z.val[1] % 4 == 0);
+    }
+    else if (z.val[3] < 0) {
+        return (z.val[3] - 1 > 0) && (z.val[0] & 2 == 0);
+    }
+    else return false; 
 }
 
 bool Z2::isZeroMod4(const Z2& z) {
-    return (z.val[0] % 4 == 0) && (z.val[1] % 4 == 0);
+    if (z.val[3] == 0) {
+        return (z.val[0] % 4 == 0) && (z.val[1] % 4 == 0);
+    }
+    else if (z.val[3] < 0) {
+        return (z.val[3] - 2 > 0);
+    }
+    else return false; 
 }
 
 bool Z2::isZeroMod8(const Z2& z) {
-    return (z.val[0] % 8 == 0) && (z.val[1] % 8 == 0);
+    if (z.val[3] == 0) {
+        return (z.val[0] % 8 == 0) && (z.val[1] % 8 == 0);
+    }
+    else if (z.val[3] < 0) {
+        return (z.val[3] - 3 > 0);
+    }
+    else return false; 
 }
 
 bool Z2::isZeroMod4Sqrt2(const Z2& z) {
-    return (z.val[0] % 8 == 0) && (z.val[1] % 4 == 0);
+    if (z.val[3] == 0) {
+        return (z.val[0] % 8 == 0) && (z.val[1] % 4 == 0);
+    }
+    else if (z.val[3] < 0) {
+        return (z.val[0] % 2 == 0) && (z.val[3] - 2 > 0);
+    }
+    else return false; 
 }
 
 /**
