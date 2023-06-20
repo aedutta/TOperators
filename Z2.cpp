@@ -31,8 +31,11 @@ bool Z2::isZeroMod2Sqrt2(const Z2& z) {
     if (z.val[3] == 0) {
         return (z.val[0] % 2 == 0) && (z.val[1] % 4 == 0);
     }
-    else if (z.val[3] < 0) {
-        return (z.val[3] - 1 > 0) && (z.val[0] & 2 == 0);
+    else if (z.val[3] == -2) {
+        return (z.val[0] % 2 == 0);
+    }
+    else if (z.val[3] == -1) {
+        return (z.val[0] % 2 == 0) && (z.val[1] % 2 == 0);
     }
     else return false; 
 }
@@ -41,8 +44,14 @@ bool Z2::isZeroMod4(const Z2& z) {
     if (z.val[3] == 0) {
         return (z.val[0] % 4 == 0) && (z.val[1] % 4 == 0);
     }
-    else if (z.val[3] < 0) {
-        return (z.val[3] - 2 > 0);
+    else if (z.val[3] == -3) {
+        return (z.val[0] % 2 == 0);
+    }
+    else if (z.val[3] == -2) {
+        return (z.val[0] % 2 == 0) && (z.val[1] % 2 == 0);
+    }
+    else if (z.val[3] == -1) {
+        return (z.val[0] % 4 == 0) && (z.val[1] % 2 == 0);
     }
     else return false; 
 }
@@ -51,8 +60,17 @@ bool Z2::isZeroMod8(const Z2& z) {
     if (z.val[3] == 0) {
         return (z.val[0] % 8 == 0) && (z.val[1] % 8 == 0);
     }
-    else if (z.val[3] < 0) {
-        return (z.val[3] - 3 > 0);
+    else if (z.val[3] == -4) {
+        return (z.val[0] % 2 == 0);
+    }
+    else if (z.val[3] == -3) {
+        return (z.val[0] % 2 == 0) && (z.val[1] % 2 == 0);
+    }
+    else if (z.val[3] == -2) {
+        return (z.val[0] % 4 == 0) && (z.val[1] % 2 == 0);
+    }
+    else if (z.val[3] == -1) {
+        return (z.val[0] % 4 == 0) && (z.val[1] % 4 == 0);
     }
     else return false; 
 }
@@ -61,8 +79,20 @@ bool Z2::isZeroMod4Sqrt2(const Z2& z) {
     if (z.val[3] == 0) {
         return (z.val[0] % 8 == 0) && (z.val[1] % 4 == 0);
     }
-    else if (z.val[3] < 0) {
-        return (z.val[0] % 2 == 0) && (z.val[3] - 2 > 0);
+    else if (z.val[3] == -5) {
+        return (z.val[0] % 2 == 0);
+    }
+    else if (z.val[3] == -4) {
+        return (z.val[0] % 2 == 0) && (z.val[1] % 2 == 0);
+    }
+    else if (z.val[3] == -3) {
+        return (z.val[0] % 4 == 0) && (z.val[1] % 2 == 0);
+    }
+    else if (z.val[3] == -2) {
+        return (z.val[0] % 4 == 0) && (z.val[1] % 4 == 0);
+    }
+    else if (z.val[3] == -1) {
+        return (z.val[0] % 8 == 0) && (z.val[1] % 4 == 0);
     }
     else return false; 
 }
